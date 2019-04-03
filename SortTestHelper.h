@@ -9,7 +9,7 @@
 
 namespace SortTestHelper {
 
-    // Éú³ÉÓĞn¸öÔªËØµÄËæ»úÊı×é,Ã¿¸öÔªËØµÄËæ»ú·¶Î§Îª[rangeL, rangeR]
+    // ç”Ÿæˆæœ‰nä¸ªå…ƒç´ çš„éšæœºæ•°ç»„,æ¯ä¸ªå…ƒç´ çš„éšæœºèŒƒå›´ä¸º[rangeL, rangeR]
     int *generateRandomArray(int n, int rangeL, int rangeR) {
 
         assert(rangeL <= rangeR);
@@ -22,7 +22,16 @@ namespace SortTestHelper {
         return arr;
     }
 
-    // ´òÓ¡arrÊı×éµÄËùÓĞÄÚÈİ
+    template <typename T>
+    int* copyArrary(T arr[], int n){
+        int *arr1 = new int[n];
+        for(int i = 0; i < n; i++){
+            arr1[i] = arr[i];
+        }
+        return arr1;
+    }
+
+    // æ‰“å°arræ•°ç»„çš„æ‰€æœ‰å†…å®¹
     template<typename T>
     void printArray(T arr[], int n) {
 
@@ -32,7 +41,7 @@ namespace SortTestHelper {
         return;
     }
 
-    //ÒòÎªÎÒÃÇÒªÉú³ÉÊı¾İºÜ´ó£¬×Ü²»ÄÜ½øĞĞ´òÓ¡°É
+    //å› ä¸ºæˆ‘ä»¬è¦ç”Ÿæˆæ•°æ®å¾ˆå¤§ï¼Œæ€»ä¸èƒ½è¿›è¡Œæ‰“å°å§
     template <typename T>
     bool isSorted(T arr[], int n){
         for(int i = 0; i < n; i++){
